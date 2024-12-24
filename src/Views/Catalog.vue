@@ -1,12 +1,12 @@
 <template>
   <div class="product-list">
     <div class="product" v-for="product in Store.products" :key="product.id">
-      <img :src="product.image" />
+      <img class="image" :src="product.image" />
       <h2>{{ product.title }}</h2>
       <p>Desc: {{ product.description }}</p>
       <p>Price: ${{ product.price }}</p>
       <p>Category: {{ product.category }}</p>
-      <p>Rating: {{ product.rating.rate }}</p>
+      <p>Rating: {{ product.rating.rate }} <img class="star" src="@/assets/star-icon.svg" /></p>
     </div>
   </div>
 </template>
@@ -45,7 +45,10 @@ onMounted(() => {
 .product:hover {
   background-color: #f3f3f3;
 }
-.product img {
+.image {
   width: 70%;
+}
+.star {
+  width: 13px;
 }
 </style>
